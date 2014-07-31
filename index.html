@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A Shiny app for plotting road race results</title>
+  <meta charset="utf-8">
+  <meta name="description" content="A Shiny app for plotting road race results">
+  <meta name="author" content="Gabi Huiber">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>A Shiny app for plotting road race results</h1>
+    <h2>because you usually know only who won and how well you did</h2>
+    <p>Gabi Huiber<br/>consultant</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>The data</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Four years (2011-2014) of results from The Running of the Bulls 8K road race.</li>
+<li>This is a yearly race organized by <a href="http://www.bullcityrunning.com/our-races/running-of-the-bulls-8k/">The Bull City Running Company</a>. It has a great course through beautiful downtown Durham, NC, and it attracts runners of all shapes and ages.</li>
+<li>Years 2011-2013 are available as pdf <a href="http://download.cnet.com/Free-PDF-to-Text-Converter/3000-10743_4-76060144.html">here</a>. The <a href="http://download.cnet.com/Free-PDF-to-Text-Converter/3000-10743_4-76060144.html">Free PDF to Text Converter</a> will turn them to text, but it&#39;s not perfect. I had to do some extra munging by hand in <a href="http://www.vim.org/">Vim</a> before my text files were ready for <code>read.table()</code>. </li>
+<li>The results for 2014 are available <a href="http://runningofthebulls8k.itsyourrace.com/results.aspx?id=3105">here</a>, and <code>XML::readHTMLTable()</code> makes quick work of them.</li>
+<li>My <a href="https://ghuiber.shinyapps.io/shinyBulls/">Shiny app</a> comes with a <code>bulls.rda</code> file that holds the final product of doing all the work described above: a <code>bulls</code> data frame that combines years 2011-2014.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Some questions you might ask</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Is there a peak age group at which paces are faster on average?</li>
+<li>Is the variance in the paces smaller at this peak age group?</li>
+<li>What&#39;s the distribution of age groups? The gender split? Age groups by gender?</li>
+<li>Do men run faster than women on average? And if this is so on average, to what extent do the distributions of paces overlap between men and women?</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>The app (wait for it)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src=https://ghuiber.shinyapps.io/shinyBulls/></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Why write a web app when a static plot will do?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>When one plot will do, don&#39;t write a web app. It&#39;s not worth it.</li>
+<li>But static plots have a way of multiplying: there&#39;s always another way to subset the data, or variable to look at, with the appropriate plot style changing accordingly. </li>
+<li>A web app eliminates the clutter by rendering only the pictures that people care about, on demand. </li>
+<li>Interactive plots are better than static ones at engaging the audience, I expect.</li>
+<li>The fixed cost of writing a web app makes you think about your options carefully (you don&#39;t want too many checkboxes) without necessarily limiting them (static plots that you might leave out of a slide deck that&#39;s getting a bit too leafy can be a radio button away).</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='The data'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Some questions you might ask'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The app (wait for it)'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Why write a web app when a static plot will do?'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <script src="shared/slider/js/jquery.slider.min.js"></script>
+  <script src="shared/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="shared/slider/css/jquery.slider.min.css"></link>
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
